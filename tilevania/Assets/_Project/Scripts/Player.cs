@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigidbodyComponent;
     private Animator _animatorComponent;
     private SpriteRenderer _spriteComponent;
+    private Collider2D _colliderComponent;
 
     private const string HorizontalAxis = "Horizontal";
 
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        _colliderComponent = GetComponent<Collider2D>();
         _rigidbodyComponent = GetComponent<Rigidbody2D>();
         _animatorComponent = GetComponent<Animator>();
         _spriteComponent = GetComponent<SpriteRenderer>();
@@ -48,7 +50,7 @@ public class Player : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && _colliderComponent.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, jumpForce);
             _rigidbodyComponent.velocity = jumpVelocity;
