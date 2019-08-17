@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Climber : MonoBehaviour
 {
@@ -33,11 +32,14 @@ public class Climber : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (_colliderComponent.IsTouchingLayers(LayerMask.GetMask(LadderLayer)))
         {
-            _canClimb = true;
+            if (Input.GetAxisRaw("Vertical") < 0 || Input.GetAxisRaw("Vertical") > 0 && !_canClimb)
+            {
+                _canClimb = true;
+            }
         }
     }
 
