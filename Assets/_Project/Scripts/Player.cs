@@ -50,10 +50,26 @@ public class Player : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Jump") && _colliderComponent.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (Input.GetButtonDown("Jump"))
         {
-            var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, jumpForce);
-            _rigidbodyComponent.velocity = jumpVelocity;
+            // Shoot raycast downwards
+            var hits = new RaycastHit2D[10];
+            var filter = new ContactFilter2D
+            {
+                layerMask = LayerMask.GetMask("Ground"),
+                useLayerMask = true
+            };
+        
+            // get hits
+            var numberOfHits = _colliderComponent.Cast(Vector2.down, filter, hits, 0.02f);
+
+            // if the player hit the ground...
+            if (numberOfHits > 0)
+            {
+                Debug.Log("Can jump!");
+                var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, jumpForce);
+                _rigidbodyComponent.velocity = jumpVelocity;
+            }
         }
     }
 }
