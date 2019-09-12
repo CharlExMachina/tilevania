@@ -56,8 +56,9 @@ public class Player : MonoBehaviour
             var hits = new RaycastHit2D[10];
             var filter = new ContactFilter2D
             {
-                layerMask = LayerMask.GetMask("Ground"),
-                useLayerMask = true
+                layerMask = LayerMask.GetMask("Ground", "Ladder"),
+                useLayerMask = true,
+                useTriggers = true
             };
         
             // get hits
@@ -66,7 +67,6 @@ public class Player : MonoBehaviour
             // if the player hit the ground...
             if (numberOfHits > 0)
             {
-                Debug.Log("Can jump!");
                 var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, jumpForce);
                 _rigidbodyComponent.velocity = jumpVelocity;
             }

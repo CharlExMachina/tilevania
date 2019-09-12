@@ -44,6 +44,11 @@ public class Climber : MonoBehaviour
 
             _rigidbodyComponent.gravityScale = 0f;
             _rigidbodyComponent.velocity = new Vector2(_rigidbodyComponent.velocity.x, direction* climbingSpeed);
+            
+            if (Input.GetButton("Jump"))
+            {
+                StopClimbing();
+            }
         }
     }
 
@@ -59,6 +64,11 @@ public class Climber : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other)
+    {
+        StopClimbing();
+    }
+
+    private void StopClimbing()
     {
         if (!_colliderComponent.IsTouchingLayers(LayerMask.GetMask(LadderLayer)))
         {
