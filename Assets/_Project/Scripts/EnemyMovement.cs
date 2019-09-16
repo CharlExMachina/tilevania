@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -9,12 +8,14 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 _direction;
     private Rigidbody2D _rigidbodyComponent;
     private Collider2D _colliderComponent;
-    
+    private SpriteRenderer _spriteComponent;
+
     // Start is called before the first frame update
     void Start()
     {
-        _colliderComponent = GetComponent<Collider2D>();
         _direction = initialDirection;
+        _spriteComponent = GetComponent<SpriteRenderer>();
+        _colliderComponent = GetComponent<Collider2D>();
         _rigidbodyComponent = GetComponent<Rigidbody2D>();
     }
 
@@ -32,29 +33,25 @@ public class EnemyMovement : MonoBehaviour
 
     private void CheckForWalls()
     {
-        var rayOrigin = Vector2.zero;
+        var xOffset = 0.0f;
 
-        if (_direction.x > 0) // right
+        if (_direction.x < 0)
         {
-            rayOrigin = new Vector2(_colliderComponent.bounds.max.x, 0);
+            xOffset = -0.5f;
         }
-        else if (_direction.x < 0)
+        else if (_direction.x > 0)
         {
-            rayOrigin = new Vector2(_colliderComponent.bounds.min.x, 0);
+            xOffset = 0.5f;
         }
         
-        var filter = new ContactFilter2D
+        var position = transform.position;
+        var wallHit = Physics2D.Raycast(position, _direction, 0.3f, LayerMask.GetMask("Ground"));
+        var groundPosition = new Vector3(position.x + xOffset, position.y);
+        var ground = Physics2D.Raycast(groundPosition, Vector2.down, 0.8f, LayerMask.GetMask("Ground"));
+
+        if (wallHit || !ground)
         {
-            layerMask = LayerMask.GetMask("Ground"),
-            useLayerMask = true,
-            useTriggers = true
-        };
-        
-        var hit = Physics2D.Raycast(transform.position, _direction, 1f, LayerMask.GetMask("Ground"));
-        
-        if (hit)
-        {
-            Debug.Log($"There's a wall ahead, changing direction! {hit.collider.gameObject.layer}");
+//            Debug.Log($"There's a wall ahead, changing direction! {wallHit.collider.gameObject.layer}");
             ChangeDirection();
         }
     }
@@ -62,5 +59,6 @@ public class EnemyMovement : MonoBehaviour
     private void ChangeDirection()
     {
         _direction *= -1;
+        _spriteComponent.flipX = !_spriteComponent.flipX;
     }
 }
