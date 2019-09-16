@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteComponent;
     private Collider2D _colliderComponent;
 
+    private int _deadLayer;
+    private bool _isAlive;
     private const string HorizontalAxis = "Horizontal";
 
     // Animation keys
     private readonly int _running = Animator.StringToHash("Running");
+    private readonly int _isAliveKey = Animator.StringToHash("IsAlive");
 
     private void Awake()
     {
@@ -24,10 +27,36 @@ public class Player : MonoBehaviour
         _spriteComponent = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        _isAlive = true;
+        _deadLayer = 13;
+    }
+
     private void Update()
     {
-        HandleHorizontalMovement();
-        HandleJump();
+        if (_isAlive)
+        {
+            HandleHorizontalMovement();
+            HandleJump();   
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        _animatorComponent.SetBool(_isAliveKey, false);
+        _isAlive = false;
+        _rigidbodyComponent.velocity = Vector2.zero;
+        PerformJump(9f);
+        gameObject.layer = _deadLayer;
     }
 
     private void HandleHorizontalMovement()
@@ -67,9 +96,14 @@ public class Player : MonoBehaviour
             // if the player hit the ground...
             if (numberOfHits > 0)
             {
-                var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, jumpForce);
-                _rigidbodyComponent.velocity = jumpVelocity;
+                PerformJump(jumpForce);
             }
         }
+    }
+
+    private void PerformJump(float force)
+    {
+        var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, force);
+        _rigidbodyComponent.velocity = jumpVelocity;
     }
 }
