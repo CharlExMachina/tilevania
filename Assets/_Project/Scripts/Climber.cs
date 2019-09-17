@@ -72,7 +72,6 @@ public class Climber : MonoBehaviour
     {
         if (!_colliderComponent.IsTouchingLayers(LayerMask.GetMask(LadderLayer)))
         {
-            Debug.Log("Not climbing anymore!");
             _canClimb = false;
             _rigidbodyComponent.gravityScale = 1f;
             _animatorComponent.SetBool(_climbing, false);
