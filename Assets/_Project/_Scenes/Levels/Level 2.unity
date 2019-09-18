@@ -17564,6 +17564,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9045805486586555512, guid: ff86d3b9777e47845a098979f3408dc6,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: Level 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff86d3b9777e47845a098979f3408dc6, type: 3}
 --- !u!1001 &4122173715502335114
@@ -17715,12 +17720,12 @@ PrefabInstance:
     - target: {fileID: 8861239469330271991, guid: b727de1acf3528f44a2b9068bba4577a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3884811
+      value: 0.69514465
       objectReference: {fileID: 0}
     - target: {fileID: 8861239469330271991, guid: b727de1acf3528f44a2b9068bba4577a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7967472
+      value: 0.40674782
       objectReference: {fileID: 0}
     - target: {fileID: 8861239468527881093, guid: b727de1acf3528f44a2b9068bba4577a,
         type: 3}
@@ -17730,7 +17735,7 @@ PrefabInstance:
     - target: {fileID: 8861239469330271752, guid: b727de1acf3528f44a2b9068bba4577a,
         type: 3}
       propertyPath: orthographic size
-      value: 5.81
+      value: 5.42
       objectReference: {fileID: 0}
     - target: {fileID: 964427979416476988, guid: b727de1acf3528f44a2b9068bba4577a,
         type: 3}

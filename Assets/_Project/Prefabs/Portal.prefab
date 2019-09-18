@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 2910608347244869088}
   - component: {fileID: 2910608347244869092}
   - component: {fileID: 2910608347244869095}
-  m_Layer: 0
+  - component: {fileID: 9045805486586555512}
+  - component: {fileID: 6845628165826894056}
+  m_Layer: 14
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2076690763
-  m_SortingLayer: 3
+  m_SortingLayerID: -765031789
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 2189510010676529607, guid: e18caf33231fa91489c60215e3588f8a,
     type: 3}
@@ -135,9 +137,35 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.89, y: 1.89}
   m_Direction: 0
+--- !u!114 &9045805486586555512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910608347244869091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4714c475d05eb40ad1878276a78c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  transitionDelay: 2
+--- !u!114 &6845628165826894056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910608347244869091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f416b3dd82d8e4285611d3242aa830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
