@@ -22,7 +22,7 @@ TagManager:
   - Background
   - Enemy
   - Dead
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -61,4 +61,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3769510747
+    locked: 0
+  - name: Interactables
+    uniqueID: 3529935507
     locked: 0
