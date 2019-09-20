@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Player : MonoBehaviour
     // Animation keys
     private readonly int _running = Animator.StringToHash("Running");
     private readonly int _isAliveKey = Animator.StringToHash("IsAlive");
+
+    public UnityEvent onDie;
 
     private void Awake()
     {
@@ -57,6 +60,7 @@ public class Player : MonoBehaviour
         _rigidbodyComponent.velocity = Vector2.zero;
         PerformJump(9f);
         gameObject.layer = _deadLayer;
+        onDie.Invoke();
     }
 
     private void HandleHorizontalMovement()

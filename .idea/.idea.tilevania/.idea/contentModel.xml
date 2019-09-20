@@ -139,9 +139,19 @@
           </e>
         </e>
         <e p="_Project" t="Include">
+          <e p="Font Source" t="Include">
+            <e p="ice_pixel7" t="Include">
+              <e p="readme.txt" t="Include" />
+            </e>
+            <e p="Press_Start_2P" t="Include">
+              <e p="OFL.txt" t="Include" />
+            </e>
+          </e>
           <e p="Scripts" t="Include">
             <e p="Climber.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
+            <e p="GameSession.cs" t="Include" />
+            <e p="GameSessionController.cs" t="Include" />
             <e p="LevelGoal.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
