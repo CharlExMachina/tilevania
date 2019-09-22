@@ -149,6 +149,7 @@
           </e>
           <e p="Scripts" t="Include">
             <e p="Climber.cs" t="Include" />
+            <e p="CoinPicker.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="GameSession.cs" t="Include" />
             <e p="GameSessionController.cs" t="Include" />
