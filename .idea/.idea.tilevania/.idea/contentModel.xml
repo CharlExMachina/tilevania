@@ -154,8 +154,10 @@
             <e p="GameSession.cs" t="Include" />
             <e p="GameSessionController.cs" t="Include" />
             <e p="LevelGoal.cs" t="Include" />
+            <e p="LivesText.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
+            <e p="ScoreText.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
