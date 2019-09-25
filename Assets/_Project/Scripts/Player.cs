@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -47,19 +48,20 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Hazards"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Hazards") && _isAlive)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
         _animatorComponent.SetBool(_isAliveKey, false);
         _isAlive = false;
         _rigidbodyComponent.velocity = Vector2.zero;
         PerformJump(9f);
         gameObject.layer = _deadLayer;
+        yield return  new WaitForSeconds(1f);
         onDie.Invoke();
     }
 

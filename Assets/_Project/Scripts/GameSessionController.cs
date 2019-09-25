@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSessionController : MonoBehaviour
@@ -23,6 +24,11 @@ public class GameSessionController : MonoBehaviour
         {
             ResetGameSession();
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        gameSession.ResetSession();
     }
 
     private void TakePlayerLife()

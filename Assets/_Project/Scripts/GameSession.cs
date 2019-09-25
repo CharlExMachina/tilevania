@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "New game session", menuName = "Tools/New game session", order = 0)]
 public class GameSession : ScriptableObject
@@ -12,7 +13,8 @@ public class GameSession : ScriptableObject
 
     public void ResetSession()
     {
-        _sessionStarted = false;
+        if (_sessionStarted)
+            _sessionStarted = false;
     }
 
     public void InitGame()
