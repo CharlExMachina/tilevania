@@ -2,7 +2,9 @@
 
 public class CoinPicker : MonoBehaviour
 {
+    [SerializeField] private int pointsToScore;
     [SerializeField] private AudioClip pickupSound;
+    [SerializeField] private GameSession gameSession;
     
     private AudioSource _audioSourceComponent;
 
@@ -16,6 +18,7 @@ public class CoinPicker : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Interactables") && other.gameObject.CompareTag("Coin"))
         {
             _audioSourceComponent.PlayOneShot(pickupSound);
+            gameSession.ScorePoints(pointsToScore);
             Destroy(other.gameObject);
         }
     }

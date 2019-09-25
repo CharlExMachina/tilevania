@@ -5,12 +5,16 @@ using UnityEngine;
 public class GameSession : ScriptableObject
 {
     [SerializeField] private int startingPlayerLives = 3;
+    [SerializeField] private int startingPlayerScore = 0;
 
     private int _playerLives;
+    private int _playerScore;
     private bool _sessionStarted;
 
     public int PlayerLives => _playerLives;
 
+    public int PlayerScore => _playerScore;
+    
     public void ResetSession()
     {
         if (_sessionStarted)
@@ -23,10 +27,16 @@ public class GameSession : ScriptableObject
         
         _sessionStarted = true;
         _playerLives = startingPlayerLives;
+        _playerScore = startingPlayerScore;
     }
     
     public void LoseLife()
     {
         _playerLives--;
+    }
+
+    public void ScorePoints(int pointsToScore)
+    {
+        _playerScore += pointsToScore;
     }
 }

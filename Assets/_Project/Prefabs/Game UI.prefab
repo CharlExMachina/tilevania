@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lives: 2'
+  m_text: 'Lives: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6dfd67b62681c3468ada8f8b4814042, type: 2}
   m_sharedMaterial: {fileID: 724046694263135262, guid: e6dfd67b62681c3468ada8f8b4814042,
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 4661996750713527334}
   - component: {fileID: 4661996750713527332}
   - component: {fileID: 4661996750713527333}
+  - component: {fileID: 479553417}
   m_Layer: 5
   m_Name: Score Text
   m_TagString: Untagged
@@ -326,6 +327,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &479553417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661996750713527335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b80fb3f7d12264086e24f81049b2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSession: {fileID: 11400000, guid: 75fac75653a5f92409cc468768c293a1, type: 2}
 --- !u!1 &4661996751623385178
 GameObject:
   m_ObjectHideFlags: 0

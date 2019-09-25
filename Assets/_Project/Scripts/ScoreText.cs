@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 
 public class ScoreText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameSession gameSession;
+    
+    private TextMeshProUGUI _textComponent;
+
+    private void Start()
     {
-        
+        _textComponent = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _textComponent.text = $"Score: {gameSession.PlayerScore}";
     }
 }
