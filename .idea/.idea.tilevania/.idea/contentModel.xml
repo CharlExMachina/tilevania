@@ -153,6 +153,8 @@
             <e p="EnemyMovement.cs" t="Include" />
             <e p="GameSession.cs" t="Include" />
             <e p="GameSessionController.cs" t="Include" />
+            <e p="GarbageCollectable.cs" t="Include" />
+            <e p="LevelGarbageCollector.cs" t="Include" />
             <e p="LevelGoal.cs" t="Include" />
             <e p="LivesText.cs" t="Include" />
             <e p="Player.cs" t="Include" />

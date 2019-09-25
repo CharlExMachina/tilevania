@@ -198,7 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c693874e42798af43ae721b33c96fcab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsToScore: 1000
   pickupSound: {fileID: 8300000, guid: b5ef032501b26184ebb00ce4a5559bfd, type: 3}
+  gameSession: {fileID: 11400000, guid: 75fac75653a5f92409cc468768c293a1, type: 2}
 --- !u!82 &2409773845641065569
 AudioSource:
   m_ObjectHideFlags: 0
@@ -211,7 +213,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.369
   m_Pitch: 1
   Loop: 0
   Mute: 0

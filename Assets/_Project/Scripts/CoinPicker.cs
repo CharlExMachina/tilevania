@@ -19,7 +19,7 @@ public class CoinPicker : MonoBehaviour
         {
             _audioSourceComponent.PlayOneShot(pickupSound);
             gameSession.ScorePoints(pointsToScore);
-            Destroy(other.gameObject);
+            other.GetComponent<GarbageCollectable>().ThrowToGarbage();
         }
     }
 }
