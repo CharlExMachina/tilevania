@@ -13,33 +13,11 @@ MonoBehaviour:
   m_Name: State Driven Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: Virtual Camera Idle
-    m_To: Virtual Camera Run
-    m_Blend:
-      m_Style: 1
-      m_Time: 0.8
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
   - m_From: Virtual Camera Run
     m_To: Virtual Camera Idle
     m_Blend:
       m_Style: 1
       m_Time: 3
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: Virtual Camera Run
-    m_To: Virtual Camera Ladder
-    m_Blend:
-      m_Style: 1
-      m_Time: 3.21
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
