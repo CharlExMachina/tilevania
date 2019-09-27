@@ -158,6 +158,7 @@
             <e p="LevelGoal.cs" t="Include" />
             <e p="LivesText.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="RisingWater.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
             <e p="ScoreText.cs" t="Include" />
           </e>
