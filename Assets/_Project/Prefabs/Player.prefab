@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  jumpForce: 12
+  jumpForce: 13
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbingSpeed: 3
+  jumpCooldown: 0.3
 --- !u!114 &1077557418
 MonoBehaviour:
   m_ObjectHideFlags: 0
