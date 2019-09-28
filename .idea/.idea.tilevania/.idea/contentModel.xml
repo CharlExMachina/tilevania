@@ -151,6 +151,8 @@
             <e p="Climber.cs" t="Include" />
             <e p="CoinPicker.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
+            <e p="Fireball.cs" t="Include" />
+            <e p="FireCannon.cs" t="Include" />
             <e p="GameSession.cs" t="Include" />
             <e p="GameSessionController.cs" t="Include" />
             <e p="GarbageCollectable.cs" t="Include" />
