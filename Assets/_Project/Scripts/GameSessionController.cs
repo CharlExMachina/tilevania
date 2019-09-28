@@ -45,6 +45,6 @@ public class GameSessionController : MonoBehaviour
     {
         onSessionReset.Invoke();
         gameSession.ResetSession();
-        _sceneLoaderComponent.LoadScene(0);
+        _sceneLoaderComponent.LoadScene("Game Over");
     }
 }

@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   jumpForce: 13
+  jumpSound: {fileID: 8300000, guid: 76848a916e6ee8a47b13290c1e5cbc42, type: 3}
   onDie:
     m_PersistentCalls:
       m_Calls:

@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private AudioClip jumpSound;
 
     private Rigidbody2D _rigidbodyComponent;
     private Animator _animatorComponent;
     private SpriteRenderer _spriteComponent;
     private Collider2D _colliderComponent;
+    private AudioSource _audioSourceComponent;
 
     private int _deadLayer;
     private bool _isAlive;
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
         _rigidbodyComponent = GetComponent<Rigidbody2D>();
         _animatorComponent = GetComponent<Animator>();
         _spriteComponent = GetComponent<SpriteRenderer>();
+        _audioSourceComponent = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -109,6 +112,8 @@ public class Player : MonoBehaviour
 
     private void PerformJump(float force)
     {
+        if (_isAlive)
+            _audioSourceComponent.PlayOneShot(jumpSound);
         var jumpVelocity = new Vector2(_rigidbodyComponent.velocity.x, force);
         _rigidbodyComponent.velocity = jumpVelocity;
     }
